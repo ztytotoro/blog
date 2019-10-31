@@ -1,4 +1,5 @@
 ﻿using Mail.Service;
+using System;
 
 namespace SmtpClient
 {
@@ -18,14 +19,22 @@ namespace SmtpClient
                 }
             });
 
-            service.SendEmail(
-                "",
-                new MailContent
-                {
-                    Subject = "Test Mail",
-                    Content = "This is a test mail"        
-                }
-            );
+            try
+            {
+                service.SendEmail(
+                    "",
+                    new MailContent
+                    {
+                        Subject = "Test Mail",
+                        Content = "This is a test mail"
+                    }
+                );
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
         }
     }
 }

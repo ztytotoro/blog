@@ -64,7 +64,7 @@ namespace Mail.Service
                     message.Body = content.Content;
                     message.BodyEncoding = System.Text.Encoding.UTF8;
 
-                    if (string.IsNullOrEmpty(content.Subject))
+                    if (!string.IsNullOrEmpty(content.Subject))
                     {
                         message.Subject = content.Subject;
                         message.SubjectEncoding = System.Text.Encoding.UTF8;
