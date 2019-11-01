@@ -19,7 +19,7 @@ onSomeEvent = new EventEmitter<T>();
 this.onSomeEvent.emit(...)
 ```
 
-## Listten
+## Listen Event
 
 ```html
 <... (onSomeEvent)="handle($event)" ...>
