@@ -8,8 +8,8 @@ namespace Mail.Service
         public string Host;
         public string UserName;
         public string Password;
-
-        public MsAddress Sender;
+        public string Sender;
+        public string DisplayName;
     }
 
     public class MsAddress
@@ -43,7 +43,7 @@ namespace Mail.Service
             host = credential.Host;
             userName = credential.UserName;
             password = credential.Password;
-            from = credential.Sender.ToMailAddress();
+            from = new MailAddress(credential.Sender ?? credential.UserName, credential.DisplayName);
         }
 
         public void SendEmail(string receiver, MailContent content, List<MsAddress> cc = null)
@@ -53,14 +53,16 @@ namespace Mail.Service
 
         public void SendEmail(MsAddress receiver, MailContent content, List<MsAddress> cc = null)
         {
-            using (var client = new SmtpClient(host)
+            using (var client = new SmtpClient())
             {
-                Credentials = new System.Net.NetworkCredential(userName, password)
-            })
-            {
+                var basicCredential = new System.Net.NetworkCredential(userName, password);
                 var to = receiver.ToMailAddress();
                 using (var message = new MailMessage(from, to))
                 {
+                    client.Host = host;
+                    client.UseDefaultCredentials = false;
+                    client.Credentials = basicCredential;
+
                     message.Body = content.Content;
                     message.BodyEncoding = System.Text.Encoding.UTF8;
 
@@ -76,7 +78,7 @@ namespace Mail.Service
                     {
                         client.Send(message);
                     }
-                    catch(SmtpException ex)
+                    catch (SmtpException ex)
                     {
                         throw ex;
                     }

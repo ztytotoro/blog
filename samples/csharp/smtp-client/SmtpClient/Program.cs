@@ -12,11 +12,7 @@ namespace SmtpClient
                 Host = "",
                 UserName = "",
                 Password = "",
-                Sender = new MsAddress
-                {
-                    Address = "",
-                    DisplayName = ""
-                }
+                Sender = ""
             });
 
             try
