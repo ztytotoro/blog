@@ -1,4 +1,6 @@
-# Watch changes in anglar(2+)
+---
+title: Watch changes in anglar(2+)
+---
 
 ```ts
 import { DoCheck, KeyValueDiffers, KeyValueDiffer } from '@angular/core';

@@ -1,10 +1,9 @@
 ---
+title: C# 中使用 SmtpClient
 tags:
   - c#
   - .net
 ---
-
-# C# 中使用 SmtpClient
 
 ## 引用
 

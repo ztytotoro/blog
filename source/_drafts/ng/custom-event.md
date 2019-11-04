@@ -1,4 +1,6 @@
-# Custom Event
+---
+title: Custom Event
+---
 
 ## Imports
 

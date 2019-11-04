@@ -1,4 +1,6 @@
-# Deep clone object
+---
+title: Deep clone object
+---
 
 ```ts
 function clone(obj: number | string | object | boolean | Array<any> | Date) {

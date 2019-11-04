@@ -1,1 +1,3 @@
-# ViewChild
+---
+title: ViewChild
+---
