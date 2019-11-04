@@ -5,3 +5,11 @@
 !.vscode/extensions.json
 *.code-workspace
 .ionide/
+
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
