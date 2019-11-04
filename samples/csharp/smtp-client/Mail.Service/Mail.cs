@@ -29,6 +29,7 @@ namespace Mail.Service
     {
         public string Subject;
         public string Content;
+        public bool IsBodyHtml = false;
     }
 
     public class MailService
@@ -64,6 +65,7 @@ namespace Mail.Service
                     client.Credentials = basicCredential;
 
                     message.Body = content.Content;
+                    message.IsBodyHtml = content.IsBodyHtml;
                     message.BodyEncoding = System.Text.Encoding.UTF8;
 
                     if (!string.IsNullOrEmpty(content.Subject))
