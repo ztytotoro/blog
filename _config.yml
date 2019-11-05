@@ -62,13 +62,13 @@ index_generator:
 default_category: uncategorized
 category_map:
 tag_map:
-  - .Net
-    - C#
-    - F#
-    - ASP.NET Core
-    - .NET Core
-  - Web
-    - TypeScript
+  - .net
+    - c#
+    - f#
+    - asp.net core
+    - .net core
+  - web
+    - typescript
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
